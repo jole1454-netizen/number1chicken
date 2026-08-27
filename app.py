@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime
+import textwrap
 
 # ============================================================
 # PAGE CONFIG
@@ -14,7 +15,7 @@ st.set_page_config(
 # ============================================================
 # CSS - RESPONSIVE FOR PHONE / TABLET / PC
 # ============================================================
-st.markdown("""
+st.markdown(textwrap.dedent("""
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
@@ -368,7 +369,7 @@ section[data-testid="stSidebar"] * {
 }
 
 </style>
-""", unsafe_allow_html=True)
+"""), unsafe_allow_html=True)
 
 # ============================================================
 # PRODUCTS
@@ -542,7 +543,7 @@ def product_card(product):
 
     st.image(
         product["image"],
-        use_container_width=True
+        width="stretch"
     )
 
     st.markdown(
@@ -572,7 +573,7 @@ def product_card(product):
     if st.button(
         "ADD TO ORDER",
         key=f"add_{product['id']}",
-        use_container_width=True
+        width="stretch"
     ):
         add_to_cart(product["id"])
         st.toast(
@@ -587,15 +588,12 @@ def product_card(product):
 # ============================================================
 with st.sidebar:
 
-    st.markdown(
-        """
+    st.markdown(textwrap.dedent("""
         <div class="brand-box">
             <div class="brand-main">NUMBER 1</div>
             <div class="brand-sub">CHICKEN</div>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """), unsafe_allow_html=True)
 
     st.divider()
 
@@ -619,8 +617,7 @@ with st.sidebar:
 # ============================================================
 if page == "Home":
 
-    st.markdown(
-        """
+    st.markdown(textwrap.dedent("""
         <div class="hero">
             <div class="hero-content">
 
@@ -642,9 +639,7 @@ if page == "Home":
 
             </div>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """), unsafe_allow_html=True)
 
     # Statistics
     cols = st.columns(4)
@@ -671,8 +666,7 @@ if page == "Home":
             )
 
     # Promo
-    st.markdown(
-        """
+    st.markdown(textwrap.dedent("""
         <div class="promo">
             <div class="promo-title">
                 🔥 FAMILY FEAST
@@ -683,9 +677,7 @@ if page == "Home":
                 chicken bucket combo.
             </p>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """), unsafe_allow_html=True)
 
     st.markdown(
         '<div class="section-title">Best Sellers</div>',
@@ -859,7 +851,7 @@ elif page == "Deals":
                 if st.button(
                     "ORDER DEAL",
                     key=deal["id"],
-                    use_container_width=True
+                    width="stretch"
                 ):
 
                     st.session_state.cart.append({
@@ -1001,7 +993,7 @@ elif page == "Cart":
 
         if st.button(
             "🔥 PLACE ORDER",
-            use_container_width=True
+            width="stretch"
         ):
 
             valid = True
@@ -1105,8 +1097,7 @@ elif page == "About":
 # ============================================================
 # FOOTER
 # ============================================================
-st.markdown(
-    """
+st.markdown(textwrap.dedent("""
     <div class="footer">
 
         <div class="footer-title">
@@ -1122,6 +1113,4 @@ st.markdown(
         </p>
 
     </div>
-    """,
-    unsafe_allow_html=True
-)
+    """), unsafe_allow_html=True)
