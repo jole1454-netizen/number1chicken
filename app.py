@@ -17,24 +17,19 @@ st.set_page_config(
 # ============================================================
 st.markdown(textwrap.dedent("""
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
-
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-
 .stApp {
     background: #f5f5f5;
 }
-
 /* Main container */
 .block-container {
     max-width: 1400px;
@@ -43,34 +38,28 @@ html, body {
     padding-right: 4%;
     padding-bottom: 3rem;
 }
-
 /* Sidebar */
 section[data-testid="stSidebar"] {
     background: #111111;
 }
-
 section[data-testid="stSidebar"] * {
     color: white !important;
 }
-
 /* Brand */
 .brand-box {
     text-align: center;
     padding: 10px 0 20px 0;
 }
-
 .brand-main {
     color: #e21d2d;
     font-size: 28px;
     font-weight: 900;
 }
-
 .brand-sub {
     color: white;
     font-size: 10px;
     letter-spacing: 4px;
 }
-
 /* Hero */
 .hero {
     width: 100%;
@@ -78,7 +67,6 @@ section[data-testid="stSidebar"] * {
     border-radius: 25px;
     padding: 55px;
     margin-bottom: 30px;
-
     background:
         linear-gradient(
             90deg,
@@ -87,18 +75,14 @@ section[data-testid="stSidebar"] * {
             rgba(220,29,45,0.65)
         ),
         url("https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb");
-
     background-size: cover;
     background-position: center;
-
     display: flex;
     align-items: center;
 }
-
 .hero-content {
     max-width: 700px;
 }
-
 .hero-small {
     color: #ff5252;
     font-size: 13px;
@@ -106,7 +90,6 @@ section[data-testid="stSidebar"] * {
     letter-spacing: 3px;
     margin-bottom: 12px;
 }
-
 .hero-title {
     color: white;
     font-size: 58px;
@@ -114,13 +97,11 @@ section[data-testid="stSidebar"] * {
     font-weight: 900;
     margin-bottom: 20px;
 }
-
 .hero-text {
     color: #eeeeee;
     font-size: 16px;
     line-height: 1.7;
 }
-
 /* Sections */
 .section-title {
     font-size: 32px;
@@ -128,12 +109,10 @@ section[data-testid="stSidebar"] * {
     color: #181818;
     margin-top: 35px;
 }
-
 .section-subtitle {
     color: #777777;
     margin-bottom: 25px;
 }
-
 /* Product card */
 .product-card {
     background: white;
@@ -144,19 +123,16 @@ section[data-testid="stSidebar"] * {
     box-shadow: 0 5px 20px rgba(0,0,0,0.06);
     overflow: hidden;
 }
-
 .product-card img {
     width: 100%;
     border-radius: 15px;
 }
-
 .product-name {
     color: #181818;
     font-size: 18px;
     font-weight: 800;
     margin-top: 12px;
 }
-
 .product-category {
     color: #999999;
     text-transform: uppercase;
@@ -164,7 +140,6 @@ section[data-testid="stSidebar"] * {
     letter-spacing: 1px;
     margin-top: 4px;
 }
-
 .product-description {
     color: #666666;
     font-size: 13px;
@@ -172,14 +147,12 @@ section[data-testid="stSidebar"] * {
     min-height: 40px;
     margin-top: 8px;
 }
-
 .product-price {
     color: #e21d2d;
     font-size: 20px;
     font-weight: 900;
     margin: 12px 0;
 }
-
 /* Buttons */
 .stButton > button {
     width: 100%;
@@ -190,12 +163,10 @@ section[data-testid="stSidebar"] * {
     color: white;
     font-weight: 800;
 }
-
 .stButton > button:hover {
     background: #b91421;
     color: white;
 }
-
 /* Stats */
 .stat-card {
     background: white;
@@ -204,18 +175,15 @@ section[data-testid="stSidebar"] * {
     text-align: center;
     box-shadow: 0 4px 18px rgba(0,0,0,0.05);
 }
-
 .stat-number {
     color: #e21d2d;
     font-size: 28px;
     font-weight: 900;
 }
-
 .stat-label {
     color: #777777;
     font-size: 12px;
 }
-
 /* Promo */
 .promo {
     background: #fff0f1;
@@ -224,13 +192,11 @@ section[data-testid="stSidebar"] * {
     padding: 25px;
     margin: 30px 0;
 }
-
 .promo-title {
     color: #e21d2d;
     font-size: 22px;
     font-weight: 900;
 }
-
 /* Cart */
 .cart-item {
     background: white;
@@ -239,7 +205,6 @@ section[data-testid="stSidebar"] * {
     margin-bottom: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-
 .cart-total {
     background: #151515;
     color: white;
@@ -247,13 +212,11 @@ section[data-testid="stSidebar"] * {
     border-radius: 18px;
     margin: 20px 0;
 }
-
 .total-price {
     color: #ff3949;
     font-size: 30px;
     font-weight: 900;
 }
-
 /* Footer */
 .footer {
     background: #111111;
@@ -263,111 +226,88 @@ section[data-testid="stSidebar"] * {
     padding: 30px;
     margin-top: 60px;
 }
-
 .footer-title {
     color: #e21d2d;
     font-size: 25px;
     font-weight: 900;
 }
-
 /* ========================================================
    PHONE
    ======================================================== */
 @media (max-width: 768px) {
-
     .block-container {
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 1rem;
     }
-
     .hero {
         min-height: 430px;
         padding: 30px 22px;
         border-radius: 20px;
         background-position: center;
     }
-
     .hero-title {
         font-size: 38px;
         line-height: 1.05;
     }
-
     .hero-text {
         font-size: 14px;
     }
-
     .hero-small {
         font-size: 11px;
         letter-spacing: 2px;
     }
-
     .section-title {
         font-size: 27px;
     }
-
     .product-name {
         font-size: 17px;
     }
-
     .product-price {
         font-size: 18px;
     }
-
     .stat-card {
         margin-bottom: 10px;
     }
-
     .promo {
         padding: 20px;
     }
-
     .footer {
         padding: 25px 15px;
     }
 }
-
 /* ========================================================
    SMALL PHONE
    ======================================================== */
 @media (max-width: 480px) {
-
     .block-container {
         padding-left: 0.7rem;
         padding-right: 0.7rem;
     }
-
     .hero {
         min-height: 400px;
         padding: 25px 18px;
     }
-
     .hero-title {
         font-size: 31px;
     }
-
     .hero-text {
         font-size: 13px;
     }
-
     .section-title {
         font-size: 24px;
     }
-
     .product-card {
         padding: 12px;
         border-radius: 16px;
     }
-
     .product-description {
         font-size: 12px;
     }
-
     .stButton > button {
         min-height: 46px;
     }
 }
-
 </style>
 """), unsafe_allow_html=True)
 
@@ -620,23 +560,19 @@ if page == "Home":
     st.markdown(textwrap.dedent("""
         <div class="hero">
             <div class="hero-content">
-
                 <div class="hero-small">
                     NUMBER 1 CHICKEN
                 </div>
-
                 <div class="hero-title">
                     CRISPY.<br>
                     JUICY.<br>
                     UNFORGETTABLE.
                 </div>
-
                 <div class="hero-text">
                     Crispy chicken, juicy burgers,
                     loaded fries and family meals.
                     Your new favorite fast-food destination.
                 </div>
-
             </div>
         </div>
         """), unsafe_allow_html=True)
@@ -671,7 +607,6 @@ if page == "Home":
             <div class="promo-title">
                 🔥 FAMILY FEAST
             </div>
-
             <p>
                 Feed the whole family with our delicious
                 chicken bucket combo.
@@ -1099,18 +1034,14 @@ elif page == "About":
 # ============================================================
 st.markdown(textwrap.dedent("""
     <div class="footer">
-
         <div class="footer-title">
             NUMBER 1 CHICKEN
         </div>
-
         <p>
             CRISPY. JUICY. UNFORGETTABLE.
         </p>
-
         <p>
             © 2026 Number 1 Chicken
         </p>
-
     </div>
     """), unsafe_allow_html=True)
